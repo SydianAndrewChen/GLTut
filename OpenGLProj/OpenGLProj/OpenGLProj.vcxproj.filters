@@ -127,8 +127,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\shader.fs" />
-    <None Include="src\shader.vs" />
+    <None Include="src\shaders\shader.fs" />
+    <None Include="src\shaders\shader.vs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\awesomeface.png">
