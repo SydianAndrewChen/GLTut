@@ -28,8 +28,6 @@ private:
 	std::vector<VertexBufferElement> elements;
 	unsigned int stride;
 public:
-	VertexBufferLayout() {};
-
 	template<typename T>
 	void push(unsigned int count) 
 	{

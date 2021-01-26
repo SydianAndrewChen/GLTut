@@ -1,4 +1,5 @@
 #include "Shader.h"
+#include "Renderer.h"
 
 Shader::Shader(const char* vertexPath, const char* fragmentPath) 
 {
@@ -41,7 +42,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
 	if (!success) 
 	{
-		//glGetShaderInfoLog(vertex, 512, NULL, infoLog);
+		glGetShaderInfoLog(vertex, 512, NULL, infoLog);
 		std::cout << "ERROR::SHADER::VERTEX::COMPILATION_ERROR" << std::endl;
 	}
 
@@ -62,10 +63,35 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 	glGetProgramiv(ID, GL_LINK_STATUS, &success);
 	if (!success) 
 	{
-		//glGetProgramInfoLog(ID, 512, NULL, infoLog);
+		glGetProgramInfoLog(ID, 512, NULL, infoLog);
 		std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
 	}
 
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);
+}
+
+
+void Shader::use() const
+{
+	GLCall(glUseProgram(ID));
+}
+void Shader::setBool(const std::string& name, bool value) const
+{
+	GLCall(glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value));
+}
+
+void Shader::setInt(const std::string& name, int value) const
+{
+	GLCall(glUniform1i(glGetUniformLocation(ID, name.c_str()), value));
+}
+
+void Shader::setFloat(const std::string& name, float value) const
+{
+	GLCall(glUniform1f(glGetUniformLocation(ID, name.c_str()), value));
+}
+
+void Shader::setFloat4_4(const std::string& name, glm::mat4 value) const
+{
+	GLCall(glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()),1, GL_FALSE, glm::value_ptr(value)));
 }

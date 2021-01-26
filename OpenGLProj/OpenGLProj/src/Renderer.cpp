@@ -18,7 +18,14 @@ bool GLLogCall(const char* function, const char* file, int line)
 
 void Renderer::clear() const
 {
-	GLCall(glClear(GL_COLOR_BUFFER_BIT));
+	GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
+}
+
+void Renderer::draw(const VertexArray& va, const int count, const Shader& shader) const
+{
+	shader.use();
+	va.bind();
+	GLCall(glDrawArrays(GL_TRIANGLES, 0, count));
 }
 
 void Renderer::draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const
@@ -27,5 +34,4 @@ void Renderer::draw(const VertexArray& va, const IndexBuffer& ib, const Shader& 
 	va.bind();
 	ib.bind();
 	GLCall(glDrawElements(GL_TRIANGLES, ib.getCount(), GL_UNSIGNED_INT, nullptr));
-
 }

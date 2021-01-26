@@ -21,6 +21,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBufferLayout.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="vendor\imgui\imgui.cpp">
       <Filter>资源文件\vendor\imgui</Filter>
     </ClCompile>
@@ -39,41 +66,29 @@
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
       <Filter>资源文件\vendor\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\glad.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\IndexBuffer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Renderer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shader.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Texture.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\VertexArray.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\VertexBuffer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\VertexBufferLayout.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MainProgram.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="vendor\imgui\imgui_impl_glfw.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Camera.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBufferLayout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\imgui\imconfig.h">
       <Filter>资源文件\vendor\imgui</Filter>
     </ClInclude>
@@ -95,46 +110,25 @@
     <ClInclude Include="vendor\imgui\imstb_truetype.h">
       <Filter>资源文件\vendor\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="src\IndexBuffer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Renderer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\stb_image.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Texture.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\VertexArray.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\VertexBuffer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\VertexBufferLayout.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\imgui\imgui_impl_glfw.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Camera.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\shader.fs" />
-    <None Include="src\shader.vs" />
+    <None Include="shader.vs">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="shader.fs">
+      <Filter>源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="textures\awesomeface.png">
+    <Text Include="stb_image.h">
+      <Filter>头文件</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="container.jpg">
       <Filter>资源文件</Filter>
     </Image>
-    <Image Include="textures\container.jpg">
+    <Image Include="awesomeface.png">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

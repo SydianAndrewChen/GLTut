@@ -1,4 +1,5 @@
-﻿  Texture.cpp
-  main.cpp
-  正在生成代码...
+﻿  main.cpp
+D:\GLtut\GLtut\OpenGLProj\OpenGLProj\main.cpp(187,15): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\GLtut\GLtut\OpenGLProj\OpenGLProj\main.cpp(188,15): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\GLtut\GLtut\OpenGLProj\OpenGLProj\main.cpp(195,17): warning C4244: “初始化”: 从“unsigned int”转换到“float”，可能丢失数据
   OpenGLProj.vcxproj -> D:\GLtut\GLtut\OpenGLProj\Debug\OpenGLProj.exe
