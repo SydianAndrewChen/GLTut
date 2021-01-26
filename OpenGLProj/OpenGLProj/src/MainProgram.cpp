@@ -91,8 +91,8 @@ unsigned int indices[] = {
 int screenWidth = 800;
 int screenHeight = 600;
 
-glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 1.0f, 0.0f);
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 
 Camera camera(cameraPos, cameraFront);
 
@@ -141,18 +141,12 @@ void mouse_call_back(GLFWwindow* window, double xpos, double ypos)
 	//	lastY = ypos;
 	//	firstMouse = false;
 	//}
-	if (cameraEnable) {
 		float xoffset = xpos - lastX;
 		float yoffset = lastY - ypos;
 		lastX = xpos;
 		lastY = ypos;
 
 		camera.rotate(xoffset, yoffset);
-	}
-	else {
-		lastX = xpos;
-		lastY = ypos;
-	}
 }
 
 int main() {
@@ -178,7 +172,7 @@ int main() {
 
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetCursorPosCallback(window, mouse_call_back);
 
 	glfwSetScrollCallback(window, scroll_back);
@@ -257,14 +251,19 @@ int main() {
 			{
 				glm::mat4 model;
 				model = glm::translate(model, cubePositions[i]);
-				float angle = (float) i * 20;
-				model = glm::rotate(model, glm::radians((float) glfwGetTime() * 10 + angle), glm::vec3(1.0f, 0.0f, 1.0f));
+				//float angle = (float) i * 20;
+				//model = glm::rotate(model, glm::radians((float) glfwGetTime() * 10 + angle), glm::vec3(1.0f, 0.0f, 1.0f));
 				ourShader.setFloat4_4("model", model);
 
 				renderer.draw(va, 36, ourShader);
 			}
 			{
 				ImGui::SliderFloat("speed", &cameraSpeed, 0.5f, 10.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+				ImGui::Text("Up vector: %f %f %f", camera.up.x, camera.up.y, camera.up.z);
+				ImGui::Text("Right vector: %f %f %f", camera.right.x, camera.right.y, camera.right.z);
+				ImGui::Text("Pos vector: %f %f %f", camera.pos.x, camera.pos.y, camera.pos.z);
+				ImGui::Text("Front vector: %f %f %f", camera.front.x, camera.front.y, camera.front.z);
+				ImGui::Text("Yaw: %f Pitch: %f", camera.yaw, camera.pitch );
 				ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 			}
 
