@@ -129,12 +129,20 @@
   <ItemGroup>
     <None Include="src\shaders\shader.fs" />
     <None Include="src\shaders\shader.vs" />
+    <None Include="src\shaders\lighter.vs" />
+    <None Include="src\shaders\lighter.fs" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\awesomeface.png">
       <Filter>资源文件</Filter>
     </Image>
     <Image Include="textures\container.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="textures\container2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="textures\container2_specular.png">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>

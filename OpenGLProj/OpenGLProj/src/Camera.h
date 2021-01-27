@@ -17,7 +17,6 @@ private:
 
 	float sensitivity;
 
-	bool cameraEnable = true;
 	void updateCameraVectors()
 	{
 		// calculate the new Front vector
@@ -30,6 +29,7 @@ private:
 		up = glm::normalize(glm::cross(right, front));
 	}
 public:
+	bool cameraEnable = true;
 	float yaw;
 	float pitch;
 	glm::vec3 pos;
@@ -37,6 +37,7 @@ public:
 	glm::vec3 up;
 	glm::vec3 right;
 	Camera(glm::vec3 cameraPos, glm::vec3 cameraFront);
+	Camera(glm::vec3 cameraPos, float yaw, float pitch);
 	~Camera() {};
 
 	void rotate(float xoffset, float yoffset);
@@ -72,6 +73,8 @@ public:
 	void setSpeed(float val) { speed = val; }
 
 	void setSensitivity(float val) { sensitivity = val; }
+
+	glm::vec3 getPos() const{ return pos; }
 
 };
 

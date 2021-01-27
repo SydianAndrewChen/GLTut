@@ -5,6 +5,12 @@ Camera::Camera(glm::vec3 __cPos, glm::vec3 __cFront):pos (__cPos), front (glm::n
 {
 
 	ASSERT(glm::cross(__cFront, yAxis) != glm::vec3(0.0f, 0.0f, 0.0f));
+	right = glm::normalize(glm::cross(front, yAxis));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
+	up = glm::normalize(glm::cross(right, front));
+}
+
+Camera::Camera(glm::vec3 cameraPos, float _yaw, float _pitch): pos(cameraPos), yaw(_yaw), pitch(_pitch)
+{
 	updateCameraVectors();
 }
 
